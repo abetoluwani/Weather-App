@@ -49,7 +49,7 @@ class AppTextFormField extends StatelessWidget {
             fontSize: 18.sp,
           ),
         ),
-        vSpace(10),
+        SizedBox(height: 10.h),
         TextFormField(
           autovalidateMode: AutovalidateMode.onUserInteraction,
           obscureText: obscureText,
@@ -131,7 +131,7 @@ class NormalAppTextFormField extends StatelessWidget {
             fontSize: 18.sp,
           ),
         ),
-        vSpace(10),
+        SizedBox(height: 10),
         TextFormField(
           autovalidateMode: AutovalidateMode.onUserInteraction,
           obscureText: obscureText,
@@ -200,7 +200,7 @@ class AppPhoneTextField extends StatelessWidget {
             fontSize: 18.sp,
           ),
         ),
-        vSpace(10),
+        SizedBox(height: 10.h),
         IntlPhoneField(
           onChanged: onChanged ??
               (value) => print(value.countryCode + '' + value.number),
@@ -267,7 +267,7 @@ class AppMultiLineTextFormField extends StatelessWidget {
             fontSize: 16.sp,
           ),
         ),
-        vSpace(5),
+        SizedBox(height: 5.h),
         TextFormField(
           autovalidateMode: AutovalidateMode.onUserInteraction,
           obscureText: obscureText,
@@ -408,7 +408,7 @@ class BioField extends StatelessWidget {
             fontSize: 18.sp,
           ),
         ),
-        vSpace(10),
+        SizedBox(height: 10.h),
         TextField(
           decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(

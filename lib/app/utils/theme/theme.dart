@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-
-import '../../widgets/widget.dart';
 import '../utils.dart';
 
 class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
-        scaffoldBackgroundColor: AppColors.white,
+        scaffoldBackgroundColor: AppColors.black,
         dialogBackgroundColor: AppColors.white,
         dialogTheme: const DialogTheme(
           backgroundColor: AppColors.white,
@@ -20,7 +18,7 @@ class AppTheme {
           surfaceTintColor: Colors.transparent,
         ),
         chipTheme: ChipThemeData(
-          padding: simPad(5, 5),
+          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           shape: const StadiumBorder(
             side: BorderSide.none,
           ),
@@ -32,7 +30,7 @@ class AppTheme {
 
   static ThemeData get darkTheme {
     return ThemeData(
-        scaffoldBackgroundColor: AppColors.white,
+        scaffoldBackgroundColor: AppColors.black,
         dialogBackgroundColor: AppColors.white,
         dialogTheme: const DialogTheme(
           backgroundColor: AppColors.white,

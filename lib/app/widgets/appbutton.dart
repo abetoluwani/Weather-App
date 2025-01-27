@@ -92,7 +92,7 @@ class AppSecondaryElevatedButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.white,
-            padding: simPad(0, 14),
+            padding: const EdgeInsets.symmetric(vertical: 14),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0),
             ),
@@ -142,7 +142,7 @@ class AppOutlinedButton extends StatelessWidget {
           side: hideBorder == null
               ? BorderSide(width: 1.0, color: brdColor ?? AppColors.primary)
               : null,
-          padding: simPad(0, 15),
+          padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
           ),
@@ -185,7 +185,7 @@ class ConfigElevatedButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             backgroundColor: bgcolour ?? AppColors.primary,
-            padding: simPad(0, 14),
+            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 14),
             shape: RoundedRectangleBorder(
               borderRadius: radius ?? BorderRadius.circular(10.0),
             ),
@@ -211,12 +211,14 @@ class ConfigOutlinedButton extends StatelessWidget {
     this.brdcolour,
     this.textcolour,
     this.bgColour,
+    this.radius,
   });
-  final double? width, height;
+  final double? width, height ;
   final void Function()? onPressed;
   final String label;
   final Color? brdcolour;
   final Color? textcolour, bgColour;
+  final BorderRadiusGeometry? radius;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -225,9 +227,9 @@ class ConfigOutlinedButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             backgroundColor: bgColour ?? AppColors.white,
-            padding: simPad(0, 14),
+            padding: const EdgeInsets.symmetric(vertical: 14),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: radius ?? BorderRadius.circular(10.0),
               side: BorderSide(color: brdcolour ?? AppColors.grey200),
             ),
             elevation: 0,
