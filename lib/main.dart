@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'app/screens/home_screen.dart';
+import 'app/utils/utils.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,11 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Weather App'),
-          ),
-        ));
+        home: HomeScreen());
   }
 }
