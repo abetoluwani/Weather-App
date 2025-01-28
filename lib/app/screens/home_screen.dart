@@ -1,10 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_weather/screens/locationError.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:material_floating_search_bar_2/material_floating_search_bar_2.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:weather_app/app/utils/theme/colors.dart';
+import 'package:weather_app/app/widgets/apptext.dart';
+import '../provider/weatherProvider.dart';
+import '../widgets/widget.dart';
+import 'locationError.dart';
 import 'requestError.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -33,8 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Consumer<WeatherProvider>(
         builder: (context, weatherProv, _) {
-          if (!weatherProv.isLoading && !weatherProv.isLocationserviceEnabled)
+          if (!weatherProv.isLoading && !weatherProv.isLocationserviceEnabled) {
             return LocationServiceErrorDisplay();
+          }
 
           if (!weatherProv.isLoading &&
               weatherProv.locationPermission != LocationPermission.always &&
@@ -108,9 +113,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
       transitionDuration: const Duration(milliseconds: 400),
       borderRadius: BorderRadius.circular(16.0),
       transitionCurve: Curves.easeInOut,
-      accentColor: primaryBlue,
-      hintStyle: regularText,
-      queryStyle: regularText,
+      
       physics: const BouncingScrollPhysics(),
       elevation: 2.0,
       debounceDelay: const Duration(milliseconds: 500),
@@ -126,7 +129,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
           showIfOpened: false,
           child: PhosphorIcon(
             PhosphorIconsBold.magnifyingGlass,
-            color: primaryBlue,
+            color: AppColors.backgroundBlue,
           ),
         ),
         FloatingSearchBarAction.icon(
@@ -134,7 +137,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
           showIfOpened: true,
           icon: PhosphorIcon(
             PhosphorIconsBold.x,
-            color: primaryBlue,
+            color:AppColors.primaryBlue,
           ),
           onTap: () {
             if (widget.fsc.query.isEmpty) {
@@ -171,7 +174,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                       children: [
                         PhosphorIcon(PhosphorIconsFill.mapPin),
                         const SizedBox(width: 22.0),
-                        Text(data, style: mediumText),
+                        SmallAppText(data),
                       ],
                     ),
                   ),

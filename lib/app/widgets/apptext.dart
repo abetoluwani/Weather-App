@@ -28,7 +28,7 @@ class SmallAppText extends StatelessWidget {
       overflow: TextOverflow.ellipsis,
       maxLines: maxLines ?? 99999,
       textAlign: alignment,
-      style: GoogleFonts.poppins(
+      style: GoogleFonts.openSans(
         color: color ?? AppColors.black,
         fontSize: fontSize ?? 14.sp,
         fontWeight: fontWeight,
@@ -63,7 +63,7 @@ class MedAppText extends StatelessWidget {
       maxLines: maxLines ?? 99999,
       textAlign: alignment,
       style: textStyle ??
-          GoogleFonts.poppins(
+          GoogleFonts.openSans(
             color: color ?? AppColors.black,
             fontSize: fontSize ?? 16.sp,
             fontWeight: fontWeight ?? FontWeight.normal,
@@ -95,7 +95,7 @@ class BigAppText extends StatelessWidget {
       overflow: TextOverflow.ellipsis,
       maxLines: maxLines ?? 99999,
       textAlign: alignment,
-      style: GoogleFonts.poppins(
+      style: GoogleFonts.openSans(
         color: color ?? AppColors.black,
         fontSize: fontSize ?? 18.sp,
         fontWeight: fontWeight ?? FontWeight.bold,
@@ -277,46 +277,6 @@ class ProductTitleText extends StatelessWidget {
       overflow: TextOverflow.ellipsis,
       maxLines: maxLines,
       textAlign: textAlign,
-    );
-  }
-}
-
-class ImportantAppText extends StatelessWidget {
-  ImportantAppText(
-    this.data, {
-    super.key,
-    this.color,
-    this.fontSize,
-    this.fontWeight,
-    this.alignment,
-    this.maxLines,
-  });
-  String data;
-  final Color? color;
-  final double? fontSize;
-  final FontWeight? fontWeight;
-  final TextAlign? alignment;
-  final int? maxLines;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          data,
-          overflow: TextOverflow.ellipsis,
-          maxLines: maxLines ?? 99999,
-          textAlign: alignment,
-          style: GoogleFonts.poppins(
-            color: color ?? AppColors.black,
-            fontSize: fontSize ?? 20.sp,
-            fontWeight: fontWeight ?? FontWeight.bold,
-          ),
-        ),
-        SmallAppText('*',
-            color: AppColors.red,
-            fontSize: fontSize ?? 22.sp,
-            fontWeight: FontWeight.bold)
-      ],
     );
   }
 }

@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'app/provider/weatherProvider.dart';
 import 'app/screens/home_screen.dart';
-import 'app/utils/utils.dart';
-
+import 'app/screens/sevenDay.dart';
+ 
 void main() {
   runApp(const MyApp());
 }

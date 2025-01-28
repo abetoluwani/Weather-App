@@ -1,2 +1,2 @@
-## Weather App Using BLoC and Also Integrating Api
+## Weather App and Also Integrating Api
 
