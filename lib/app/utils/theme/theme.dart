@@ -13,7 +13,7 @@ class AppTheme {
         primaryColor: AppColors.primary,
         cardColor: AppColors.white,
         appBarTheme: const AppBarTheme(
-          backgroundColor: AppColors.white,
+          backgroundColor: AppColors.black,
           iconTheme: IconThemeData(color: AppColors.black),
           surfaceTintColor: Colors.transparent,
         ),
@@ -31,13 +31,13 @@ class AppTheme {
   static ThemeData get darkTheme {
     return ThemeData(
         scaffoldBackgroundColor: AppColors.black,
-        dialogBackgroundColor: AppColors.white,
+        dialogBackgroundColor: AppColors.black,
         dialogTheme: const DialogTheme(
           backgroundColor: AppColors.white,
           surfaceTintColor: AppColors.white,
         ),
         appBarTheme: const AppBarTheme(
-          backgroundColor: AppColors.white,
+          backgroundColor: AppColors.black,
           elevation: 0,
           surfaceTintColor: Colors.transparent,
           iconTheme: IconThemeData(color: AppColors.black),
@@ -52,4 +52,3 @@ class AppTheme {
         popupMenuTheme: const PopupMenuThemeData(color: AppColors.white));
   }
 }
-

@@ -9,15 +9,49 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      supportedLocales: const [Locale('en', '')],
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+    return ChangeNotifierProvider(
+      create: (context) => WeatherProvider(),
+      child: MaterialApp(
+        title: 'Flutter Weather',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          appBarTheme: AppBarTheme(
+            backgroundColor: Colors.white,
+            iconTheme: IconThemeData(color: Colors.blue),
+            elevation: 0,
+          ),
+          scaffoldBackgroundColor: Colors.white,
+          primaryColor: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          colorScheme:
+              ColorScheme.fromSwatch().copyWith(secondary: Colors.white),
+        ),
+        home: HomeScreen(),
+        // routes: {
+        //   WeeklyScreen.routeName: (ctx) => WeeklyScreen(),
+        // },
+        onGenerateRoute: (settings) {
+          final arguments = settings.arguments;
+          if (settings.name == SevenDayForecastDetail.routeName) {
+            return PageRouteBuilder(
+              settings: settings,
+              pageBuilder: (_, __, ___) => SevenDayForecastDetail(
+                initialIndex: arguments == null ? 0 : arguments as int,
+              ),
+              transitionsBuilder: (ctx, a, b, c) => CupertinoPageTransition(
+                primaryRouteAnimation: a,
+                secondaryRouteAnimation: b,
+                linearTransition: false,
+                child: c,
+              ),
+            );
+          }
+          // Unknown route
+          return MaterialPageRoute(builder: (_) => HomeScreen());
+        },
+      ),
     );
   }
 }
