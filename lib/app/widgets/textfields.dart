@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
+ import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:intl_phone_field/phone_number.dart';
 import '../utils/utils.dart';
 import 'apptext.dart';
@@ -45,10 +44,10 @@ class AppTextFormField extends StatelessWidget {
           child: MedAppText(
             label ?? '',
             color: AppColors.black,
-            fontSize: 18.sp,
+            fontSize: 18 ,
           ),
         ),
-        SizedBox(height: 10.h),
+        SizedBox(height: 10 ),
         TextFormField(
           autovalidateMode: AutovalidateMode.onUserInteraction,
           obscureText: obscureText,
@@ -82,7 +81,7 @@ class AppTextFormField extends StatelessWidget {
               hintStyle: const TextStyle(color: AppColors.grey100)),
           style: TextStyle(
               color: AppColors.black,
-              fontSize: fontsize ?? 14.sp), // Customize text color
+              fontSize: fontsize ?? 14 ), // Customize text color
           cursorColor: AppColors.primary, // Customize cursor color
           validator:
               validator, // Use the provided validator function, or it will be null by default
@@ -127,7 +126,7 @@ class NormalAppTextFormField extends StatelessWidget {
           child: MedAppText(
             label ?? '',
             color: AppColors.black,
-            fontSize: 18.sp,
+            fontSize: 18 ,
           ),
         ),
         SizedBox(height: 10),
@@ -162,7 +161,7 @@ class NormalAppTextFormField extends StatelessWidget {
               hintStyle: const TextStyle(color: AppColors.grey100)),
           style: TextStyle(
               color: AppColors.black,
-              fontSize: fontsize ?? 14.sp), // Customize text color
+              fontSize: fontsize ?? 14 ), // Customize text color
           cursorColor: AppColors.primary, // Customize cursor color
           validator:
               validator, // Use the provided validator function, or it will be null by default
@@ -196,10 +195,10 @@ class AppPhoneTextField extends StatelessWidget {
           child: MedAppText(
             label ?? '',
             color: AppColors.black,
-            fontSize: 18.sp,
+            fontSize: 18 ,
           ),
         ),
-        SizedBox(height: 10.h),
+        SizedBox(height: 10 ),
         IntlPhoneField(
           onChanged: onChanged ??
               (value) => print(value.countryCode + '' + value.number),
@@ -264,10 +263,10 @@ class AppMultiLineTextFormField extends StatelessWidget {
           child: SmallAppText(
             label ?? '',
             color: AppColors.black,
-            fontSize: 16.sp,
+            fontSize: 16 ,
           ),
         ),
-        SizedBox(height: 5.h),
+        SizedBox(height: 5 ),
         TextFormField(
           autovalidateMode: AutovalidateMode.onUserInteraction,
           obscureText: obscureText,
@@ -289,7 +288,7 @@ class AppMultiLineTextFormField extends StatelessWidget {
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
             hintText: hint,
-            hintStyle: TextStyle(color: AppColors.grey200, fontSize: 12.sp),
+            hintStyle: TextStyle(color: AppColors.grey200, fontSize: 12 ),
             labelStyle: const TextStyle(
                 color: AppColors.black), // Customize label text color
           ),
@@ -366,7 +365,7 @@ class AppRoundedTextFormField extends StatelessWidget {
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
           hintText: hint,
-          hintStyle: TextStyle(color: AppColors.grey200, fontSize: 12.sp),
+          hintStyle: TextStyle(color: AppColors.grey200, fontSize: 12 ),
           labelStyle: const TextStyle(
               color: AppColors.black), // Customize label text color
         ),
@@ -404,10 +403,10 @@ class BioField extends StatelessWidget {
           child: MedAppText(
             label ?? '',
             color: AppColors.black,
-            fontSize: 18.sp,
+            fontSize: 18 ,
           ),
         ),
-        SizedBox(height: 10.h),
+        SizedBox(height: 10 ),
         TextField(
           decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(

@@ -1,16 +1,14 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
- import 'package:geolocator/geolocator.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'package:latlong2/latlong.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../models/models.dart';
 
- 
- 
-
 class WeatherProvider with ChangeNotifier {
-  String apiKey = 'Enter Your API Key';
+  final String _apiKey = dotenv.env['WEATHER_API_KEY'] ?? '';
+  final String _baseUrl = dotenv.env['BASE_URL'] ?? '';
   late Weather weather;
   late AdditionalWeatherData additionalWeatherData;
   LatLng? currentLocation;
@@ -95,7 +93,7 @@ class WeatherProvider with ChangeNotifier {
 
   Future<void> getCurrentWeather(LatLng location) async {
     Uri url = Uri.parse(
-      'https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=$apiKey',
+      '$_baseUrl/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=$_apiKey',
     );
     try {
       final response = await http.get(url);
@@ -114,7 +112,7 @@ class WeatherProvider with ChangeNotifier {
     notifyListeners();
 
     Uri dailyUrl = Uri.parse(
-      'https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&units=metric&exclude=minutely,current&appid=$apiKey',
+      '$_baseUrl/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&units=metric&exclude=minutely,current&appid=$_apiKey',
     );
     try {
       final response = await http.get(dailyUrl);
@@ -139,7 +137,7 @@ class WeatherProvider with ChangeNotifier {
   Future<GeocodeData?> locationToLatLng(String location) async {
     try {
       Uri url = Uri.parse(
-        'http://api.openweathermap.org/geo/1.0/direct?q=$location&limit=5&appid=$apiKey',
+        '$_baseUrl/geo/1.0/direct?q=$location&limit=5&appid=$_apiKey',
       );
       final http.Response response = await http.get(url);
       if (response.statusCode != 200) return null;

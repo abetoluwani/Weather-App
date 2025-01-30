@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/utils.dart';
- 
+
 class SmallAppText extends StatelessWidget {
   SmallAppText(
     this.data, {
@@ -30,7 +30,7 @@ class SmallAppText extends StatelessWidget {
       textAlign: alignment,
       style: GoogleFonts.openSans(
         color: color ?? AppColors.black,
-        fontSize: fontSize ?? 14.sp,
+        fontSize: fontSize ?? 14,
         fontWeight: fontWeight,
       ),
     );
@@ -65,7 +65,7 @@ class MedAppText extends StatelessWidget {
       style: textStyle ??
           GoogleFonts.openSans(
             color: color ?? AppColors.black,
-            fontSize: fontSize ?? 16.sp,
+            fontSize: fontSize ?? 16 ,
             fontWeight: fontWeight ?? FontWeight.normal,
           ),
     );
@@ -97,7 +97,7 @@ class BigAppText extends StatelessWidget {
       textAlign: alignment,
       style: GoogleFonts.openSans(
         color: color ?? AppColors.black,
-        fontSize: fontSize ?? 18.sp,
+        fontSize: fontSize ?? 18 ,
         fontWeight: fontWeight ?? FontWeight.bold,
       ),
     );

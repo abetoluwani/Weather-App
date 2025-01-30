@@ -26,9 +26,9 @@ class AppElevatedButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: bgColor ?? AppColors.primary,
         foregroundColor: textColor ?? AppColors.white,
-        minimumSize: Size(double.infinity, 50.h),
+        minimumSize: Size(double.infinity, 50),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.r),
+          borderRadius: BorderRadius.circular(10),
         ),
       ),
       child: child ??
@@ -36,15 +36,13 @@ class AppElevatedButton extends StatelessWidget {
             title ?? "",
             color: textColor ?? AppColors.white,
             fontWeight: FontWeight.w600,
-            fontSize: 14.sp,
+            fontSize: 14,
           ),
     );
   }
 }
 
-
-
- class NormalElevatedButton extends StatelessWidget {
+class NormalElevatedButton extends StatelessWidget {
   const NormalElevatedButton({
     super.key,
     required this.title,
@@ -63,12 +61,12 @@ class AppElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-          minimumSize: Size(double.infinity, 50.h),
+          minimumSize: Size(double.infinity, 50),
           padding: padding ??
               const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           backgroundColor: color ?? AppColors.primaryDark,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(radius ?? 10.r),
+            borderRadius: BorderRadius.circular(radius ?? 10),
           ),
         ),
         onPressed: onPressed,
@@ -135,7 +133,7 @@ class AppOutlinedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: buttonHeight ?? 50.h,
+      height: buttonHeight ?? 50,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: bgColor ?? Colors.transparent,
@@ -181,7 +179,7 @@ class ConfigElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: width ?? MediaQuery.of(context).size.width * 0.40,
-      height: height ?? 50.h,
+      height: height ?? 50,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             backgroundColor: bgcolour ?? AppColors.primary,
@@ -213,7 +211,7 @@ class ConfigOutlinedButton extends StatelessWidget {
     this.bgColour,
     this.radius,
   });
-  final double? width, height ;
+  final double? width, height;
   final void Function()? onPressed;
   final String label;
   final Color? brdcolour;
@@ -223,7 +221,7 @@ class ConfigOutlinedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: width ?? MediaQuery.of(context).size.width * 0.40,
-      height: height ?? 50.h,
+      height: height ?? 50,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             backgroundColor: bgColour ?? AppColors.white,
