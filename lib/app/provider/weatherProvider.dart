@@ -93,7 +93,7 @@ class WeatherProvider with ChangeNotifier {
 
   Future<void> getCurrentWeather(LatLng location) async {
     Uri url = Uri.parse(
-      '$_baseUrl/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=$_apiKey',
+      '$_baseUrl/data/3.0/weather?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=$_apiKey',
     );
     try {
       final response = await http.get(url);
@@ -112,7 +112,7 @@ class WeatherProvider with ChangeNotifier {
     notifyListeners();
 
     Uri dailyUrl = Uri.parse(
-      '$_baseUrl/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&units=metric&exclude=minutely,current&appid=$_apiKey',
+      '$_baseUrl/data/3.0/onecall?lat=${location.latitude}&lon=${location.longitude}&units=metric&exclude=minutely,current&appid=$_apiKey',
     );
     try {
       final response = await http.get(dailyUrl);
