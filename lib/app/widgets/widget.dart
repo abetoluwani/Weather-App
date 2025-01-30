@@ -6,5 +6,4 @@ export 'shimmer.dart';
 export 'locationError.dart';
 export 'requestError.dart';
 export 'sevenDayForecast.dart';
-export 'weatherInfoHeader.dart';
 export 'weatherDetails.dart';

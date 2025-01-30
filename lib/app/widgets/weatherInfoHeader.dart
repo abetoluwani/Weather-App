@@ -1,11 +1,11 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_weather/provider/weatherProvider.dart';
-import 'package:flutter_weather/theme/colors.dart';
-import 'package:flutter_weather/theme/textStyle.dart';
-import 'package:flutter_weather/widgets/customShimmer.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+
+import '../provider/weatherProvider.dart';
+import '../utils/utils.dart';
+import 'widget.dart';
 
 class WeatherInfoHeader extends StatelessWidget {
   static const double boxWidth = 52.0;
@@ -33,25 +33,22 @@ class WeatherInfoHeader extends StatelessWidget {
                             textAlign: TextAlign.start,
                             text: TextSpan(
                               text: weatherProv.weather.city + ', ',
-                              style: semiboldText,
-                              children: [
+                               children: [
                                 TextSpan(
                                   text: Country.tryParse(
                                           weatherProv.weather.countryCode)
                                       ?.name,
-                                  style: regularText.copyWith(fontSize: 18.0),
-                                ),
+                                 ),
                               ],
                             ),
                           ),
                         ),
                         const SizedBox(height: 4.0),
                         FittedBox(
-                          child: Text(
+                          child: MedAppText(
                             DateFormat('EEEE MMM dd, y  hh:mm a')
                                 .format(DateTime.now()),
-                            style: regularText.copyWith(
-                                color: Colors.grey.shade700),
+                            color: Colors.grey.shade700,
                           ),
                         )
                       ],
@@ -92,7 +89,7 @@ class WeatherInfoHeader extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(8.0),
                                       color: weatherProv.isLoading
                                           ? Colors.grey
-                                          : primaryBlue,
+                                          : AppColors.primaryBlue,
                                     ),
                                   ),
                                   Container(
@@ -131,7 +128,7 @@ class WeatherInfoHeader extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(8.0),
                                       color: weatherProv.isLoading
                                           ? Colors.grey
-                                          : primaryBlue,
+                                          : AppColors.primaryBlue,
                                     ),
                                   ),
                                 ],
@@ -146,28 +143,25 @@ class WeatherInfoHeader extends StatelessWidget {
                             height: boxHeight,
                             width: boxWidth,
                             alignment: Alignment.center,
-                            child: Text(
+                            child: MedAppText(
                               '°C',
-                              style: semiboldText.copyWith(
-                                fontSize: 16,
+                                 fontSize: 16,
                                 color: weatherProv.isCelsius
                                     ? Colors.white
                                     : Colors.grey.shade600,
-                              ),
+                              
                             ),
                           ),
                           Container(
                             height: boxHeight,
                             width: boxWidth,
                             alignment: Alignment.center,
-                            child: Text(
+                            child: MedAppText(
                               '°F',
-                              style: semiboldText.copyWith(
-                                fontSize: 16,
-                                color: weatherProv.isCelsius
-                                    ? Colors.grey.shade600
-                                    : Colors.white,
-                              ),
+                              fontSize: 16,
+                              color: weatherProv.isCelsius
+                                  ? Colors.grey.shade600
+                                  : Colors.white,
                             ),
                           ),
                         ],

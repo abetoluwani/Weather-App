@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_weather/helper/extensions.dart';
-import 'package:flutter_weather/helper/utils.dart';
-import 'package:flutter_weather/provider/weatherProvider.dart';
-import 'package:flutter_weather/theme/textStyle.dart';
 import 'package:provider/provider.dart';
+import 'package:weather_app/app/utils/helper/extensions.dart';
 
-import 'customShimmer.dart';
-
+import '../provider/weatherProvider.dart';
+import '../utils/helper/helpers.dart';
+import 'widget.dart';
+ 
 class MainWeatherInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -44,28 +43,28 @@ class MainWeatherInfo extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         FittedBox(
-                          child: Text(
+                          child: BigAppText(
                             weatherProv.isCelsius
                                 ? weatherProv.weather.temp.toStringAsFixed(1)
                                 : weatherProv.weather.temp
                                     .toFahrenheit()
                                     .toStringAsFixed(1),
-                            style: boldText.copyWith(fontSize: 86),
+                            fontSize: 86,
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 8.0),
-                          child: Text(
+                          child: MedAppText(
                             weatherProv.measurementUnit,
-                            style: mediumText.copyWith(fontSize: 26),
+                            fontSize: 26,
                           ),
                         ),
                       ],
                     ),
                   ),
-                  Text(
+                  SmallAppText(
                     weatherProv.weather.description.toTitleCase(),
-                    style: lightText.copyWith(fontSize: 16),
+                    fontSize: 16,
                   )
                 ],
               ),

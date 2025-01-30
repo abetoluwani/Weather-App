@@ -1,8 +1,6 @@
-import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
- import 'package:intl/intl.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-
 import '../provider/weatherProvider.dart';
 import '../utils/utils.dart';
 import 'apptext.dart';

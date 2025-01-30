@@ -7,6 +7,8 @@ import 'package:provider/provider.dart';
 import 'package:weather_app/app/utils/theme/colors.dart';
 import 'package:weather_app/app/widgets/apptext.dart';
 import '../provider/weatherProvider.dart';
+import '../widgets/24forecast.dart';
+import '../widgets/mainWeatherInfo.dart';
 import '../widgets/widget.dart';
 import 'locationError.dart';
 import 'requestError.dart';
